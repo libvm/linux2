@@ -1,0 +1,12 @@
+[Unit]
+Description=MyDaemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/libvm/linux2/task2/daemon
+Restart=always
+
+[Install]
+WantedBy=default.target
+
