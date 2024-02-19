@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/home/libvm/linux2/task2/daemon
+ExecStart=/home/libvm/linux2/backup_daemon/daemon
 Restart=always
 
 [Install]

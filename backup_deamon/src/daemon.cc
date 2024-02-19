@@ -24,7 +24,7 @@ void readConfigFile(const string& cfgFile, string& srcDir, string& destDir, int&
 }
 
 int main() {
-  const string cfgPath = "/home/libvm/linux2/task2/daemon.conf";
+  const string cfgPath = "/home/libvm/linux2/backup_daemon/daemon.conf";
   string srcDir, destDir;
   int interval;
   SignalHandler::setupSignalHandlers();
