@@ -1,4 +1,7 @@
-#include "daemon.hh"
+#include "SignalHandler.hh"
+#include <iostream>
+#include <syslog.h>
+#include <csignal>
 
 using namespace std;
 

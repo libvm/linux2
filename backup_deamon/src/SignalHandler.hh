@@ -1,12 +1,5 @@
 #ifndef DAEMON_HH
 #define DAEMON_HH
-#include <iostream>
-#include <fstream>
-#include <chrono>
-#include <thread>
-#include <syslog.h>
-#include <csignal>
-#include <string>
 
 class SignalHandler
 {
@@ -22,8 +15,5 @@ class SignalHandler
   static bool getStatus();
   static void setupSignalHandlers();
 };
-
-void backupFiles(const std::string& srcDir, const std::string& destDir);
-void readConfigFile(const std::string& cfgFile, std::string& srcDir, std::string& destDir, int& interval);
 
 #endif
