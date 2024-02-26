@@ -1,7 +1,7 @@
-#include "SignalHandler.hh"
 #include <iostream>
 #include <syslog.h>
 #include <csignal>
+#include "SignalHandler.hh"
 
 using namespace std;
 
@@ -36,8 +36,10 @@ bool SignalHandler::getStatus() {
   }
 
 void SignalHandler::setupSignalHandlers() {
+  signalStart(0);
   signal(SIGCONT, signalStart);
   signal(SIGTSTP, signalPause);
   signal(SIGTERM, signalStop);
   signal(SIGUSR1, signalGetStatus);
+  signalStart(0);
   }

@@ -5,7 +5,7 @@
 #include <fstream>
 #include <unordered_map>
 #include <regex>
-#include "logger.hh"
+#include "Logger.hh"
 
 using namespace std;
 
@@ -37,7 +37,7 @@ string getSyscallName(long num) {
 int main(int argc, char** argv) {
   populateSyscallNames();
   if (argc != 2) {
-    cout << "Usage: sudo ./Audit <pid>" << endl;
+    cout << "Usage: sudo ./audit <pid>" << endl;
     return EXIT_FAILURE;
   }
 

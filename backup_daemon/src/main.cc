@@ -1,8 +1,8 @@
-#include "SignalHandler.hh"
 #include <iostream>
 #include <fstream>
 #include <thread>
 #include <syslog.h>
+#include "SignalHandler.hh"
 
 using namespace std;
 
@@ -32,12 +32,9 @@ int main() {
   string srcDir, destDir;
   int interval;
   SignalHandler::setupSignalHandlers();
-
   openlog("BackupDaemon", LOG_PID, LOG_USER);
-
   while (SignalHandler::getStatus()) {
     readConfigFile(cfgPath, srcDir, destDir, interval);
-
     syslog(LOG_INFO, "Performing backup from %s to %s", srcDir.c_str(), destDir.c_str());
     backupFiles(srcDir, destDir);
     syslog(LOG_INFO, "Backup completed. Waiting for next interval...");
